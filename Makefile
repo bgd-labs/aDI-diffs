@@ -64,29 +64,6 @@ flatten-new-ccip :;
 	forge flatten etherscan/rev2/new/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol --output flattened/rev2/ccip/new/mainnet/CCIPAdapter.sol
 	forge flatten etherscan/rev2/new/adapters/ccip/binance/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol --output flattened/rev2/ccip/new/binance/CCIPAdapter.sol
 
-
-flatten-current-ccc-impl :;
-	forge flatten etherscan/rev2/current/ccc_impl/mainnet/CrossChainController/src/contracts/CrossChainController.sol --output flattened/rev2/ccc_impl/current/mainnet/CrossChainController.sol
-	forge flatten etherscan/rev2/current/ccc_impl/arbitrum/CrossChainController/src/contracts/CrossChainController.sol --output flattened/rev2/ccc_impl/current/arbitrum/CrossChainController.sol
-	forge flatten etherscan/rev2/current/ccc_impl/base/CrossChainController/src/contracts/CrossChainController.sol --output flattened/rev2/ccc_impl/current/base/CrossChainController.sol
-	forge flatten etherscan/rev2/current/ccc_impl/optimism/CrossChainController/src/contracts/CrossChainController.sol --output flattened/rev2/ccc_impl/current/optimism/CrossChainController.sol
-	forge flatten etherscan/rev2/current/ccc_impl/scroll/CrossChainController/src/contracts/CrossChainController.sol --output flattened/rev2/ccc_impl/current/scroll/CrossChainController.sol
-	forge flatten etherscan/rev2/current/ccc_impl/avalanche/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/current/avalanche/CrossChainControllerWithEmergencyMode.sol
-	forge flatten etherscan/rev2/current/ccc_impl/polygon/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/current/polygon/CrossChainControllerWithEmergencyMode.sol
-	forge flatten etherscan/rev2/current/ccc_impl/binance/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/current/binance/CrossChainControllerWithEmergencyMode.sol
-	forge flatten etherscan/rev2/current/ccc_impl/gnosis/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/current/gnosis/CrossChainControllerWithEmergencyMode.sol
-
-flatten-new-ccc-impl :;
-	forge flatten etherscan/rev2/new/ccc_impl/mainnet/CrossChainControllerUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainController.sol --output flattened/rev2/ccc_impl/new/mainnet/CrossChainController.sol
-	forge flatten etherscan/rev2/new/ccc_impl/arbitrum/CrossChainControllerUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainController.sol --output flattened/rev2/ccc_impl/new/arbitrum/CrossChainController.sol
-	forge flatten etherscan/rev2/new/ccc_impl/base/CrossChainControllerUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainController.sol --output flattened/rev2/ccc_impl/new/base/CrossChainController.sol
-	forge flatten etherscan/rev2/new/ccc_impl/optimism/CrossChainControllerUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainController.sol --output flattened/rev2/ccc_impl/new/optimism/CrossChainController.sol
-	forge flatten etherscan/rev2/new/ccc_impl/scroll/CrossChainControllerUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainController.sol --output flattened/rev2/ccc_impl/new/scroll/CrossChainController.sol
-	forge flatten etherscan/rev2/new/ccc_impl/avalanche/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/new/avalanche/CrossChainControllerWithEmergencyMode.sol
-	forge flatten etherscan/rev2/new/ccc_impl/polygon/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/new/polygon/CrossChainControllerWithEmergencyMode.sol
-	forge flatten etherscan/rev2/new/ccc_impl/binance/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/new/binance/CrossChainControllerWithEmergencyMode.sol
-	forge flatten etherscan/rev2/new/ccc_impl/gnosis/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/new/gnosis/CrossChainControllerWithEmergencyMode.sol
-
 diff-ccip :;
 	make git-diff before=flattened/rev2/ccip/current/mainnet/CCIPAdapter.sol after=flattened/rev2/ccip/new/mainnet/CCIPAdapter.sol out=rev2/ccip/mainnet
 	make git-diff before=flattened/rev2/ccip/current/avalanche/CCIPAdapter.sol after=flattened/rev2/ccip/new/avalanche/CCIPAdapter.sol out=rev2/ccip/avalanche
@@ -94,15 +71,15 @@ diff-ccip :;
 	make git-diff before=flattened/rev2/ccip/current/binance/CCIPAdapter.sol after=flattened/rev2/ccip/new/binance/CCIPAdapter.sol out=rev2/ccip/binance
 
 diff-ccc-impl :;
-	make git-diff before=flattened/rev2/ccc_impl/current/mainnet/CrossChainController.sol after=flattened/rev2/ccc_impl/new/mainnet/CrossChainController.sol out=rev2/ccc_impl/mainnet
-	make git-diff before=flattened/rev2/ccc_impl/current/arbitrum/CrossChainController.sol after=flattened/rev2/ccc_impl/new/arbitrum/CrossChainController.sol out=rev2/ccc_impl/arbitrum
-	make git-diff before=flattened/rev2/ccc_impl/current/base/CrossChainController.sol after=flattened/rev2/ccc_impl/new/base/CrossChainController.sol out=rev2/ccc_impl/base
-	make git-diff before=flattened/rev2/ccc_impl/current/optimism/CrossChainController.sol after=flattened/rev2/ccc_impl/new/optimism/CrossChainController.sol out=rev2/ccc_impl/optimism
-	make git-diff before=flattened/rev2/ccc_impl/current/scroll/CrossChainController.sol after=flattened/rev2/ccc_impl/new/scroll/CrossChainController.sol out=rev2/ccc_impl/scroll
-	make git-diff before=flattened/rev2/ccc_impl/current/avalanche/CrossChainControllerWithEmergencyMode.sol after=flattened/rev2/ccc_impl/new/avalanche/CrossChainControllerWithEmergencyMode.sol out=rev2/ccc_impl/avalanche
-	make git-diff before=flattened/rev2/ccc_impl/current/polygon/CrossChainControllerWithEmergencyMode.sol after=flattened/rev2/ccc_impl/new/polygon/CrossChainControllerWithEmergencyMode.sol out=rev2/ccc_impl/polygon
-	make git-diff before=flattened/rev2/ccc_impl/current/gnosis/CrossChainControllerWithEmergencyMode.sol after=flattened/rev2/ccc_impl/new/gnosis/CrossChainControllerWithEmergencyMode.sol out=rev2/ccc_impl/gnosis
-	make git-diff before=flattened/rev2/ccc_impl/current/binance/CrossChainControllerWithEmergencyMode.sol after=flattened/rev2/ccc_impl/new/binance/CrossChainControllerWithEmergencyMode.sol out=rev2/ccc_impl/binance
+	make git-diff before=etherscan/rev2/current/ccc_impl/mainnet/CrossChainController/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/mainnet/CrossChainControllerUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/mainnet
+	make git-diff before=etherscan/rev2/current/ccc_impl/arbitrum/CrossChainController/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/arbitrum/CrossChainControllerUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/arbitrum
+	make git-diff before=etherscan/rev2/current/ccc_impl/base/CrossChainController/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/base/CrossChainControllerUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/base
+	make git-diff before=etherscan/rev2/current/ccc_impl/optimism/CrossChainController/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/optimism/CrossChainControllerUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/optimism
+	make git-diff before=etherscan/rev2/current/ccc_impl/scroll/CrossChainController/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/scroll/CrossChainControllerUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/scroll
+	make git-diff before=etherscan/rev2/current/ccc_impl/avalanche/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/avalanche/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/avalanche
+	make git-diff before=etherscan/rev2/current/ccc_impl/polygon/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/polygon/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/polygon
+	make git-diff before=etherscan/rev2/current/ccc_impl/gnosis/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/gnosis/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/gnosis
+	make git-diff before=etherscan/rev2/current/ccc_impl/binance/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/binance/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/binance
 
 generate-diffs :;
 	make get-current-ccip-adapers
