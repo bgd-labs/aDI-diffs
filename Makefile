@@ -81,6 +81,17 @@ diff-ccc-impl :;
 	make git-diff before=etherscan/rev2/current/ccc_impl/gnosis/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/gnosis/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/gnosis
 	make git-diff before=etherscan/rev2/current/ccc_impl/binance/CrossChainControllerWithEmergencyMode/src/contracts/CrossChainReceiver.sol after=etherscan/rev2/new/ccc_impl/binance/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/CrossChainReceiver.sol out=rev2/ccc_impl/binance
 
+diff-errors :;
+	make git-diff before=etherscan/rev2/current/ccc_impl/mainnet/CrossChainController/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/mainnet/CrossChainControllerUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/mainnet
+	make git-diff before=etherscan/rev2/current/ccc_impl/arbitrum/CrossChainController/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/arbitrum/CrossChainControllerUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/arbitrum
+	make git-diff before=etherscan/rev2/current/ccc_impl/base/CrossChainController/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/base/CrossChainControllerUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/base
+	make git-diff before=etherscan/rev2/current/ccc_impl/optimism/CrossChainController/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/optimism/CrossChainControllerUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/optimism
+	make git-diff before=etherscan/rev2/current/ccc_impl/scroll/CrossChainController/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/scroll/CrossChainControllerUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/scroll
+	make git-diff before=etherscan/rev2/current/ccc_impl/avalanche/CrossChainControllerWithEmergencyMode/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/avalanche/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/avalanche
+	make git-diff before=etherscan/rev2/current/ccc_impl/polygon/CrossChainControllerWithEmergencyMode/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/polygon/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/polygon
+	make git-diff before=etherscan/rev2/current/ccc_impl/gnosis/CrossChainControllerWithEmergencyMode/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/gnosis/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/gnosis
+	make git-diff before=etherscan/rev2/current/ccc_impl/binance/CrossChainControllerWithEmergencyMode/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/binance/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/binance
+
 generate-diffs :;
 	make get-current-ccip-adapers
 	make get-new-ccip-adapers
