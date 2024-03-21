@@ -53,21 +53,21 @@ get-new-ccc-impl :;
 	cast etherscan-source --chain 534352 -d etherscan/rev2/new/ccc_impl/scroll 0x5e06b10B3b9c3E1c0996D2544A35B9839Be02922 --etherscan-api-key ${ETHERSCAN_API_KEY_SCROLL}
 
 diff-base-adapter :;
-	make git-diff before=etherscan/rev2/current/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol out=rev2/base_adapter/mainnet
-	make git-diff before=etherscan/rev2/current/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol out=rev2/base_adapter/avalanche
-	make git-diff before=etherscan/rev2/current/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol out=rev2/base_adapter/polygon
+	make git-diff before=etherscan/rev2/current/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol out=rev2/base_adapter/avalanche
+	make git-diff before=etherscan/rev2/current/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol out=rev2/base_adapter/polygon
+	make git-diff before=etherscan/rev2/current/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol out=rev2/base_adapter/mainnet
 	make git-diff before=etherscan/rev2/current/adapters/ccip/binance/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/binance/CCIPAdapter/src/contracts/adapters/BaseAdapter.sol out=rev2/base_adapter/binance
 
 diff-base-adapter-interface :;
-	make git-diff before=etherscan/rev2/current/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol out=rev2/i_base_adapter/mainnet
-	make git-diff before=etherscan/rev2/current/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol out=rev2/i_base_adapter/avalanche
-	make git-diff before=etherscan/rev2/current/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol out=rev2/i_base_adapter/polygon
+	make git-diff before=etherscan/rev2/current/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol out=rev2/i_base_adapter/avalanche
+	make git-diff before=etherscan/rev2/current/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol out=rev2/i_base_adapter/polygon
+	make git-diff before=etherscan/rev2/current/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol out=rev2/i_base_adapter/mainnet
 	make git-diff before=etherscan/rev2/current/adapters/ccip/binance/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol after=etherscan/rev2/new/adapters/ccip/binance/CCIPAdapter/src/contracts/adapters/IBaseAdapter.sol out=rev2/i_base_adapter/binance
 
 diff-ccip :;
-	make git-diff before=etherscan/rev2/current/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol after=etherscan/rev2/new/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol out=rev2/ccip/mainnet
-	make git-diff before=etherscan/rev2/current/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol after=etherscan/rev2/new/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol out=rev2/ccip/avalanche
-	make git-diff before=etherscan/rev2/current/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol after=etherscan/rev2/new/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol out=rev2/ccip/polygon
+	make git-diff before=etherscan/rev2/current/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol after=etherscan/rev2/new/adapters/ccip/avalanche/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol out=rev2/ccip/avalanche
+	make git-diff before=etherscan/rev2/current/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol after=etherscan/rev2/new/adapters/ccip/polygon/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol out=rev2/ccip/polygon
+	make git-diff before=etherscan/rev2/current/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol after=etherscan/rev2/new/adapters/ccip/mainnet/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol out=rev2/ccip/mainnet
 	make git-diff before=etherscan/rev2/current/adapters/ccip/binance/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol after=etherscan/rev2/new/adapters/ccip/binance/CCIPAdapter/src/contracts/adapters/ccip/CCIPAdapter.sol out=rev2/ccip/binance
 
 diff-ccc-impl :;
