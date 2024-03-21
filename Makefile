@@ -28,6 +28,22 @@ get-new-ccip-adapers :;
 	cast etherscan-source --chain 43114 -d etherscan/rev2/new/adapters/ccip/avalanche 0x2b88C83727B0E290B76EB3F6133994fF81B7f355 --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
 	cast etherscan-source --chain 56 -d etherscan/rev2/new/adapters/ccip/binance 0xAE93BEa44dcbE52B625169588574d31e36fb3A67 --etherscan-api-key ${ETHERSCAN_API_KEY_BINANCE}
 
+
+get-current-hyperlane-adapers :;
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/hyperlane/mainnet 0x6Abb61beb5848B476d026C4934E8a6415e2E75a8 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 137 -d etherscan/rev2/current/adapters/hyperlane/polygon 0x3c25b96fF62D21E90556869272a277eE2E229747 --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
+	cast etherscan-source --chain 43114 -d etherscan/rev2/current/adapters/hyperlane/avalanche 0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04 --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
+	cast etherscan-source --chain 56 -d etherscan/rev2/current/adapters/hyperlane/binance 0x118DFD5418890c0332042ab05173Db4A2C1d283c --etherscan-api-key ${ETHERSCAN_API_KEY_BINANCE}
+	cast etherscan-source --chain 100 -d etherscan/rev2/current/adapters/hyperlane/gnosis 0x4A4c73d563395ad827511F70097d4Ef82E653805 --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
+
+get-new-hyperlane-adapers :;
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/hyperlane/mainnet 0x01dcb90Cf13b82Cde4A0BAcC655585a83Af3cCC1 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 137 -d etherscan/rev2/new/adapters/hyperlane/polygon 0x3e72665008dC237bdd91C04C10782Ed1987a4019 --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
+	cast etherscan-source --chain 43114 -d etherscan/rev2/new/adapters/hyperlane/avalanche 0x617332a777780F546261247F621051d0b98975Eb --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
+	cast etherscan-source --chain 56 -d etherscan/rev2/new/adapters/hyperlane/binance 0x3F006299eC88985c18E6e885EeA29A49eC579882 --etherscan-api-key ${ETHERSCAN_API_KEY_BINANCE}
+	cast etherscan-source --chain 100 -d etherscan/rev2/new/adapters/hyperlane/gnosis 0xA806DA549FcB2B4912a7dFFE4c1aA7A1ed0Bd5C9 --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
+
+
 get-current-ccc-impl :;
 	cast etherscan-source --chain 1 -d etherscan/rev2/current/ccc_impl/mainnet 0x0Bf5bbfaE7808D329e0Ba8277e0b746BbfDA68f1 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
 	cast etherscan-source --chain 43114 -d etherscan/rev2/current/ccc_impl/avalanche 0x9fE056F44510F970d724adA16903ba5D75CC4742 --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
@@ -91,6 +107,15 @@ diff-errors :;
 	make git-diff before=etherscan/rev2/current/ccc_impl/polygon/CrossChainControllerWithEmergencyMode/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/polygon/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/polygon
 	make git-diff before=etherscan/rev2/current/ccc_impl/gnosis/CrossChainControllerWithEmergencyMode/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/gnosis/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/gnosis
 	make git-diff before=etherscan/rev2/current/ccc_impl/binance/CrossChainControllerWithEmergencyMode/src/contracts/libs/Errors.sol after=etherscan/rev2/new/ccc_impl/binance/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/libs/Errors.sol out=rev2/errors/binance
+
+diff-hyperlane :;
+	make git-diff before=etherscan/rev2/current/adapters/hyperlane/avalanche/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol after=etherscan/rev2/new/adapters/hyperlane/avalanche/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol out=rev2/hyperlane/avalanche
+	make git-diff before=etherscan/rev2/current/adapters/hyperlane/polygon/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol after=etherscan/rev2/new/adapters/hyperlane/polygon/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol out=rev2/hyperlane/polygon
+	make git-diff before=etherscan/rev2/current/adapters/hyperlane/mainnet/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol after=etherscan/rev2/new/adapters/hyperlane/mainnet/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol out=rev2/hyperlane/mainnet
+	make git-diff before=etherscan/rev2/current/adapters/hyperlane/binance/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol after=etherscan/rev2/new/adapters/hyperlane/binance/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol out=rev2/hyperlane/binance
+	make git-diff before=etherscan/rev2/current/adapters/hyperlane/gnosis/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol after=etherscan/rev2/new/adapters/hyperlane/gnosis/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol out=rev2/hyperlane/gnosis
+
+
 
 generate-diffs :;
 	make get-current-ccip-adapers
