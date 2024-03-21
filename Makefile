@@ -16,14 +16,6 @@ git-diff :
 	@npx prettier ${before} ${after} --write
 	@printf '%s\n%s\n%s\n' "\`\`\`diff" "$$(git diff --no-index --diff-algorithm=patience --ignore-space-at-eol ${before} ${after})" "\`\`\`" > diffs/${out}.md
 
-flatten-pool-contracts :;
-	forge flatten etherscan/AaveV3Arbitrum_POOL/L2Pool/lib/aave-v3-core/contracts/protocol/pool/L2Pool.sol --output etherscan/flattened/v3PoolArbitrum/Pool.sol
-
-diff-current-pools :;
-	make flatten-pool-contracts
-	make git-diff before=etherscan/flattened/v3PoolGnosis after=etherscan/flattened/v3PoolBase out=CURRENT_GNOSIS_BASE_POOL_DIFF
-
-
 get-current-ccip-adapers :;
 	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/ccip/mainnet 0xDB8953194810b1942544fA528791278D458719D5 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
 	cast etherscan-source --chain 137 -d etherscan/rev2/current/adapters/ccip/avalanche 0x95Fa2c817169E26956AB8795c84a225b55d7db5B --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
@@ -95,9 +87,6 @@ flatten-new-ccc-impl :;
 	forge flatten etherscan/rev2/new/ccc_impl/binance/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/new/binance/CrossChainControllerWithEmergencyMode.sol
 	forge flatten etherscan/rev2/new/ccc_impl/gnosis/CrossChainControllerWithEmergencyModeUpgradeRev2/src/contracts/revisions/update_to_rev_2/CrossChainControllerWithEmergencyMode.sol --output flattened/rev2/ccc_impl/new/gnosis/CrossChainControllerWithEmergencyMode.sol
 
-
-
-
 diff-ccip :;
 	make git-diff before=flattened/rev2/ccip/current/mainnet/CCIPAdapter.sol after=flattened/rev2/ccip/new/mainnet/CCIPAdapter.sol out=rev2/ccip/mainnet
 	make git-diff before=flattened/rev2/ccip/current/avalanche/CCIPAdapter.sol after=flattened/rev2/ccip/new/avalanche/CCIPAdapter.sol out=rev2/ccip/avalanche
@@ -114,3 +103,15 @@ diff-ccc-impl :;
 	make git-diff before=flattened/rev2/ccc_impl/current/polygon/CrossChainControllerWithEmergencyMode.sol after=flattened/rev2/ccc_impl/new/polygon/CrossChainControllerWithEmergencyMode.sol out=rev2/ccc_impl/polygon
 	make git-diff before=flattened/rev2/ccc_impl/current/gnosis/CrossChainControllerWithEmergencyMode.sol after=flattened/rev2/ccc_impl/new/gnosis/CrossChainControllerWithEmergencyMode.sol out=rev2/ccc_impl/gnosis
 	make git-diff before=flattened/rev2/ccc_impl/current/binance/CrossChainControllerWithEmergencyMode.sol after=flattened/rev2/ccc_impl/new/binance/CrossChainControllerWithEmergencyMode.sol out=rev2/ccc_impl/binance
+
+generate-diffs :;
+	make get-current-ccip-adapers
+	make get-new-ccip-adapers
+	make get-current-ccc-impl
+	make get-new-ccc-impl
+	make flatten-current-ccip
+	make flatten-new-ccip
+	make flatten-current-ccc-impl
+	make flatten-new-ccc-impl
+	make diff-ccip
+	make diff-ccc-impl
