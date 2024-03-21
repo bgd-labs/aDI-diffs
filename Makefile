@@ -18,14 +18,14 @@ git-diff :
 
 get-current-ccip-adapers :;
 	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/ccip/mainnet 0xDB8953194810b1942544fA528791278D458719D5 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
-	cast etherscan-source --chain 137 -d etherscan/rev2/current/adapters/ccip/avalanche 0x95Fa2c817169E26956AB8795c84a225b55d7db5B --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
-	cast etherscan-source --chain 43114 -d etherscan/rev2/current/adapters/ccip/polygon 0x3F006299eC88985c18E6e885EeA29A49eC579882 --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
+	cast etherscan-source --chain 137 -d etherscan/rev2/current/adapters/ccip/polygon 0x95Fa2c817169E26956AB8795c84a225b55d7db5B --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
+	cast etherscan-source --chain 43114 -d etherscan/rev2/current/adapters/ccip/avalanche 0x3F006299eC88985c18E6e885EeA29A49eC579882 --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
 	cast etherscan-source --chain 56 -d etherscan/rev2/current/adapters/ccip/binance 0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf --etherscan-api-key ${ETHERSCAN_API_KEY_BINANCE}
 
 get-new-ccip-adapers :;
 	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/ccip/mainnet 0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
-	cast etherscan-source --chain 137 -d etherscan/rev2/new/adapters/ccip/avalanche 0xe79757D55a1600eF28D816a893E78E9FCDE2019E --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
-	cast etherscan-source --chain 43114 -d etherscan/rev2/new/adapters/ccip/polygon 0x2b88C83727B0E290B76EB3F6133994fF81B7f355 --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
+	cast etherscan-source --chain 137 -d etherscan/rev2/new/adapters/ccip/polygon 0xe79757D55a1600eF28D816a893E78E9FCDE2019E --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
+	cast etherscan-source --chain 43114 -d etherscan/rev2/new/adapters/ccip/avalanche 0x2b88C83727B0E290B76EB3F6133994fF81B7f355 --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
 	cast etherscan-source --chain 56 -d etherscan/rev2/new/adapters/ccip/binance 0xAE93BEa44dcbE52B625169588574d31e36fb3A67 --etherscan-api-key ${ETHERSCAN_API_KEY_BINANCE}
 
 get-current-ccc-impl :;
@@ -97,9 +97,5 @@ generate-diffs :;
 	make get-new-ccip-adapers
 	make get-current-ccc-impl
 	make get-new-ccc-impl
-	make flatten-current-ccip
-	make flatten-new-ccip
-	make flatten-current-ccc-impl
-	make flatten-new-ccc-impl
 	make diff-ccip
 	make diff-ccc-impl
