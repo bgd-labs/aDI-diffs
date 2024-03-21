@@ -23,3 +23,5 @@ Copyright © 2024, Aave DAO, represented by its governance smart contracts.
 
 Created by [BGD Labs](https://bgdlabs.com/).
 
+License [MIT](./LICENSE)
+

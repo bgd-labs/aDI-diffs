@@ -36,7 +36,7 @@ get-current-ccc-impl :;
 	cast etherscan-source --chain 42161 -d etherscan/rev2/current/ccc_impl/arbitrum 0xbDfA4BdD705e02A2Da357ddd2e543ec654529940 --etherscan-api-key ${ETHERSCAN_API_KEY_ARBITRUM}
 	cast etherscan-source --chain 8453 -d etherscan/rev2/current/ccc_impl/base 0x96F68837877fd0414B55050c9e794AECdBcfCA59 --etherscan-api-key ${ETHERSCAN_API_KEY_BASE}
 	cast etherscan-source --chain 100 -d etherscan/rev2/current/ccc_impl/gnosis 0x96F68837877fd0414B55050c9e794AECdBcfCA59 --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
-	#cast etherscan-source --chain 1088 -d etherscan/rev2/current/ccc_impl/metis 0x3829943c53F2d00e20B58475aF19716724bF90Ba --etherscan-api-key ${ETHERSCAN_API_KEY_METIS}
+	cast etherscan-source --chain 1088 -d etherscan/rev2/current/ccc_impl/metis 0x3829943c53F2d00e20B58475aF19716724bF90Ba
 	cast etherscan-source --chain 10 -d etherscan/rev2/current/ccc_impl/optimism 0x9390B1735def18560c509E2d0bc090E9d6BA257a --etherscan-api-key ${ETHERSCAN_API_KEY_OPTIMISM}
 	cast etherscan-source --chain 534352 -d etherscan/rev2/current/ccc_impl/scroll 0xa88c6D90eAe942291325f9ae3c66f3563B93FE10 --etherscan-api-key ${ETHERSCAN_API_KEY_SCROLL}
 
@@ -48,7 +48,7 @@ get-new-ccc-impl :;
 	cast etherscan-source --chain 42161 -d etherscan/rev2/new/ccc_impl/arbitrum 0x6e633269af45F37c44659D98f382dd0DD524E5Df --etherscan-api-key ${ETHERSCAN_API_KEY_ARBITRUM}
 	cast etherscan-source --chain 8453 -d etherscan/rev2/new/ccc_impl/base 0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F --etherscan-api-key ${ETHERSCAN_API_KEY_BASE}
 	cast etherscan-source --chain 100 -d etherscan/rev2/new/ccc_impl/gnosis 0x5e06b10B3b9c3E1c0996D2544A35B9839Be02922 --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
-	#cast etherscan-source --chain 1088 -d etherscan/rev2/new/ccc_impl/metis 0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04 --etherscan-api-key ${ETHERSCAN_API_KEY_METIS}
+	cast etherscan-source --chain 1088 -d etherscan/rev2/new/ccc_impl/metis 0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04
 	cast etherscan-source --chain 10 -d etherscan/rev2/new/ccc_impl/optimism 0xa5cc218513305221201f196760E9e64e9D49d98A --etherscan-api-key ${ETHERSCAN_API_KEY_OPTIMISM}
 	cast etherscan-source --chain 534352 -d etherscan/rev2/new/ccc_impl/scroll 0x5e06b10B3b9c3E1c0996D2544A35B9839Be02922 --etherscan-api-key ${ETHERSCAN_API_KEY_SCROLL}
 

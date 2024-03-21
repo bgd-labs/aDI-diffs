@@ -33,7 +33,7 @@ avalanche = { key="${ETHERSCAN_API_KEY_AVALANCHE}", chain=43114 }
 polygon = { key="${ETHERSCAN_API_KEY_POLYGON}", chain=137 }
 arbitrum = { key="${ETHERSCAN_API_KEY_ARBITRUM}", chain=42161 }
 fantom = { key="${ETHERSCAN_API_KEY_FANTOM}", chain=250 }
-metis = { key="any", chainId=1088, url='https://andromeda-explorer.metis.io/' }
+metis = { key="any", chainId=1088, url='https://andromeda-explorer.metis.io/api/' }
 base = { key="${ETHERSCAN_API_KEY_BASE}", chainId=8453 }
 zkevm = { key="${ETHERSCAN_API_KEY_ZKEVM}", chainId=1101 }
 gnosis = { key="${ETHERSCAN_API_KEY_GNOSIS}", chainId=100 }
