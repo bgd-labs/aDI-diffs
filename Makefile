@@ -43,6 +43,21 @@ get-new-hyperlane-adapers :;
 	cast etherscan-source --chain 56 -d etherscan/rev2/new/adapters/hyperlane/binance 0x3F006299eC88985c18E6e885EeA29A49eC579882 --etherscan-api-key ${ETHERSCAN_API_KEY_BINANCE}
 	cast etherscan-source --chain 100 -d etherscan/rev2/new/adapters/hyperlane/gnosis 0xA806DA549FcB2B4912a7dFFE4c1aA7A1ed0Bd5C9 --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
 
+get-current-layerzero-adapers :;
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/layerzero/mainnet 0x2a323be63e08E08536Fc3b5d8C6f24825e68895e --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/layerzero/mainnet_gnosis 0x1783DA119C35ED03e608f88cB9528Aba8174fFfc --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 137 -d etherscan/rev2/current/adapters/layerzero/polygon 0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5 --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
+	cast etherscan-source --chain 43114 -d etherscan/rev2/current/adapters/layerzero/avalanche 0xf41193E25408F652AF878c47E4401A01B5E4B682 --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
+	cast etherscan-source --chain 56 -d etherscan/rev2/current/adapters/layerzero/binance 0xFF1137243698CaA18EE364Cc966CF0e02A4e6327 --etherscan-api-key ${ETHERSCAN_API_KEY_BINANCE}
+	cast etherscan-source --chain 100 -d etherscan/rev2/current/adapters/layerzero/gnosis 0x7b62461a3570c6AC8a9f8330421576e417B71EE7 --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
+
+get-new-layerzero-adapers :;
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/layerzero/mainnet 0x8410d9BD353b420ebA8C48ff1B0518426C280FCC --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 137 -d etherscan/rev2/new/adapters/layerzero/polygon 0x7FAE7765abB4c8f778d57337bB720d0BC53057e3 --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
+	cast etherscan-source --chain 43114 -d etherscan/rev2/new/adapters/layerzero/avalanche 0x10f02995a399C0dC0FaF29914220E9C1bCdE8640 --etherscan-api-key ${ETHERSCAN_API_KEY_AVALANCHE}
+	cast etherscan-source --chain 56 -d etherscan/rev2/new/adapters/layerzero/binance 0xa5cc218513305221201f196760E9e64e9D49d98A --etherscan-api-key ${ETHERSCAN_API_KEY_BINANCE}
+	cast etherscan-source --chain 100 -d etherscan/rev2/new/adapters/layerzero/gnosis 0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
+
 
 get-current-ccc-impl :;
 	cast etherscan-source --chain 1 -d etherscan/rev2/current/ccc_impl/mainnet 0x0Bf5bbfaE7808D329e0Ba8277e0b746BbfDA68f1 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
@@ -114,6 +129,14 @@ diff-hyperlane :;
 	make git-diff before=etherscan/rev2/current/adapters/hyperlane/mainnet/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol after=etherscan/rev2/new/adapters/hyperlane/mainnet/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol out=rev2/hyperlane/mainnet
 	make git-diff before=etherscan/rev2/current/adapters/hyperlane/binance/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol after=etherscan/rev2/new/adapters/hyperlane/binance/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol out=rev2/hyperlane/binance
 	make git-diff before=etherscan/rev2/current/adapters/hyperlane/gnosis/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol after=etherscan/rev2/new/adapters/hyperlane/gnosis/HyperLaneAdapter/src/contracts/adapters/hyperlane/HyperLaneAdapter.sol out=rev2/hyperlane/gnosis
+
+diff-layerzero :;
+	make git-diff before=etherscan/rev2/current/adapters/layerzero/avalanche/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol after=etherscan/rev2/new/adapters/layerzero/avalanche/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol out=rev2/layerzero/avalanche
+	make git-diff before=etherscan/rev2/current/adapters/layerzero/polygon/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol after=etherscan/rev2/new/adapters/layerzero/polygon/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol out=rev2/layerzero/polygon
+	make git-diff before=etherscan/rev2/current/adapters/layerzero/mainnet/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol after=etherscan/rev2/new/adapters/layerzero/mainnet/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol out=rev2/layerzero/mainnet
+	make git-diff before=etherscan/rev2/current/adapters/layerzero/mainnet_gnosis/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol after=etherscan/rev2/new/adapters/layerzero/mainnet/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol out=rev2/layerzero/mainnet_gnosis
+	make git-diff before=etherscan/rev2/current/adapters/layerzero/binance/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol after=etherscan/rev2/new/adapters/layerzero/binance/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol out=rev2/layerzero/binance
+	make git-diff before=etherscan/rev2/current/adapters/layerzero/gnosis/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol after=etherscan/rev2/new/adapters/layerzero/gnosis/LayerZeroAdapter/src/contracts/adapters/layerZero/LayerZeroAdapter.sol out=rev2/layerzero/gnosis
 
 
 
