@@ -58,6 +58,57 @@ get-new-layerzero-adapers :;
 	cast etherscan-source --chain 56 -d etherscan/rev2/new/adapters/layerzero/binance 0xa5cc218513305221201f196760E9e64e9D49d98A --etherscan-api-key ${ETHERSCAN_API_KEY_BINANCE}
 	cast etherscan-source --chain 100 -d etherscan/rev2/new/adapters/layerzero/gnosis 0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
 
+get-current-native-adapers :;
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/native/mainnet_arbitrum 0xE2a33403eaD139873820da597531f07f65ED0E3c --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/native/mainnet_gnosis 0xe95B40b2CF5fA2F56AAEf9E52f5Bd1e70C059858 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/native/mainnet_optimism 0x2ecC4F6CDbe6ea77107dd131Af81ec82Db330d6b --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/native/mainnet_base 0xEB442296880a3FC7C00FFe695c40B09d970fb936 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/native/mainnet_scroll 0xb29F03cbCc646201eC83E9F2C164747beA84b162 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/native/mainnet_metis 0x619643b346E3389062527cdb60C8720415B39860 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/native/mainnet_polygon 0xb13712De579E1f9943502FFCf72eab6ec348cF79 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/current/adapters/native/mainnet_mainnet 0x118DFD5418890c0332042ab05173Db4A2C1d283c --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 42161 -d etherscan/rev2/current/adapters/native/arbitrum 0x3829943c53F2d00e20B58475aF19716724bF90Ba --etherscan-api-key ${ETHERSCAN_API_KEY_ARBITRUM}
+	cast etherscan-source --chain 100 -d etherscan/rev2/current/adapters/native/gnosis 0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
+	cast etherscan-source --chain 10 -d etherscan/rev2/current/adapters/native/optimism 0x81d32B36380e6266e1BDd490eAC56cdB300afBe0 --etherscan-api-key ${ETHERSCAN_API_KEY_OPTIMISM}
+	cast etherscan-source --chain 8453 -d etherscan/rev2/current/adapters/native/base 0x7b62461a3570c6AC8a9f8330421576e417B71EE7 --etherscan-api-key ${ETHERSCAN_API_KEY_BASE}
+	cast etherscan-source --chain 534352 -d etherscan/rev2/current/adapters/native/scroll 0x118DFD5418890c0332042ab05173Db4A2C1d283c --etherscan-api-key ${ETHERSCAN_API_KEY_SCROLL}
+	#cast etherscan-source --chain 1088 -d etherscan/rev2/current/adapters/native/metis 0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf
+	cast etherscan-source --chain 137 -d etherscan/rev2/current/adapters/native/polygon 0xb13712De579E1f9943502FFCf72eab6ec348cF79 --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
+
+get-new-native-adapers :;
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/native/mainnet_arbitrum 0x88d6D01e08d3e64513b15fD46528dBbA7d755883 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/native/mainnet_gnosis 0x7238d75fD75bb936E83b75854c653F104Ce9c9d8 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/native/mainnet_optimism 0x0e24524778fdc67f53eEf144b8cbf50261E930B3 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/native/mainnet_base 0xa5948b0ac79f72966dFFC5C13E44f6dfDD3D58A0 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/native/mainnet_scroll 0xA4dC3F123e1c601A19B3DC8382BB9311F678cafA --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/native/mainnet_metis 0x6B3Dc800E7c813Db3fe8D0F30fDCaE636935dC14 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/native/mainnet_polygon 0x1562F1b2487F892BBA8Ef325aF054Fd157510a71 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 1 -d etherscan/rev2/new/adapters/native/mainnet_mainnet 0x6cfbd2aA4691fc18B9C209bDd43DC3943C228FCf --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
+	cast etherscan-source --chain 42161 -d etherscan/rev2/new/adapters/native/arbitrum 0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d --etherscan-api-key ${ETHERSCAN_API_KEY_ARBITRUM}
+	cast etherscan-source --chain 100 -d etherscan/rev2/new/adapters/native/gnosis 0x3C06dce358add17aAf230f2234bCCC4afd50d090 --etherscan-api-key ${ETHERSCAN_API_KEY_GNOSIS}
+	cast etherscan-source --chain 10 -d etherscan/rev2/new/adapters/native/optimism 0xAE93BEa44dcbE52B625169588574d31e36fb3A67 --etherscan-api-key ${ETHERSCAN_API_KEY_OPTIMISM}
+	cast etherscan-source --chain 8453 -d etherscan/rev2/new/adapters/native/base 0x7120b1f8e5b73c0C0DC99C6e52Fe4937E7EA11e0 --etherscan-api-key ${ETHERSCAN_API_KEY_BASE}
+	cast etherscan-source --chain 534352 -d etherscan/rev2/new/adapters/native/scroll 0x3C06dce358add17aAf230f2234bCCC4afd50d090 --etherscan-api-key ${ETHERSCAN_API_KEY_SCROLL}
+	#cast etherscan-source --chain 1088 -d etherscan/rev2/new/adapters/native/metis 0xf41193E25408F652AF878c47E4401A01B5E4B682
+	cast etherscan-source --chain 137 -d etherscan/rev2/new/adapters/native/polygon 0x853649f897383f89d8441346Cf26a9ed02720B02 --etherscan-api-key ${ETHERSCAN_API_KEY_POLYGON}
+
+diff-native-adapters :;
+	make git-diff before=etherscan/rev2/current/adapters/native/arbitrum/ArbAdapter/src/contracts/adapters/arbitrum/ArbAdapter.sol after=etherscan/rev2/new/adapters/native/arbitrum/ArbAdapter/src/contracts/adapters/arbitrum/ArbAdapter.sol out=rev2/native/arb_adapter/arbitrum
+	make git-diff before=etherscan/rev2/current/adapters/native/mainnet_arbitrum/ArbAdapter/src/contracts/adapters/arbitrum/ArbAdapter.sol after=etherscan/rev2/new/adapters/native/mainnet_arbitrum/ArbAdapter/src/contracts/adapters/arbitrum/ArbAdapter.sol out=rev2/native/arb_adapter/mainnet_arbitrum
+	make git-diff before=etherscan/rev2/current/adapters/native/optimism/OpAdapter/src/contracts/adapters/optimism/OpAdapter.sol after=etherscan/rev2/new/adapters/native/optimism/OpAdapter/src/contracts/adapters/optimism/OpAdapter.sol out=rev2/native/op_adapter/optimism
+	make git-diff before=etherscan/rev2/current/adapters/native/mainnet_optimism/OpAdapter/src/contracts/adapters/optimism/OpAdapter.sol after=etherscan/rev2/new/adapters/native/mainnet_optimism/OpAdapter/src/contracts/adapters/optimism/OpAdapter.sol out=rev2/native/op_adapter/mainnet_optimism
+	make git-diff before=etherscan/rev2/current/adapters/native/base/CBaseAdapter/src/contracts/adapters/cBase/CBaseAdapter.sol after=etherscan/rev2/new/adapters/native/base/CBaseAdapter/src/contracts/adapters/cBase/CBaseAdapter.sol out=rev2/native/base_adapter/base
+	make git-diff before=etherscan/rev2/current/adapters/native/mainnet_base/CBaseAdapter/src/contracts/adapters/cBase/CBaseAdapter.sol after=etherscan/rev2/new/adapters/native/mainnet_base/CBaseAdapter/src/contracts/adapters/cBase/CBaseAdapter.sol out=rev2/native/base_adapter/mainnet_base
+	make git-diff before=etherscan/rev2/current/adapters/native/gnosis/GnosisChainAdapter/src/contracts/adapters/gnosisChain/GnosisChainAdapter.sol after=etherscan/rev2/new/adapters/native/gnosis/GnosisChainAdapter/src/contracts/adapters/gnosisChain/GnosisChainAdapter.sol out=rev2/native/gnosis_adapter/gnosis
+	make git-diff before=etherscan/rev2/current/adapters/native/mainnet_gnosis/GnosisChainAdapter/src/contracts/adapters/gnosisChain/GnosisChainAdapter.sol after=etherscan/rev2/new/adapters/native/mainnet_gnosis/GnosisChainAdapter/src/contracts/adapters/gnosisChain/GnosisChainAdapter.sol out=rev2/native/gnosis_adapter/mainnet_gnosis
+	make git-diff before=etherscan/rev2/current/adapters/native/polygon/PolygonAdapterPolygon/src/contracts/adapters/polygon/PolygonAdapterPolygon.sol after=etherscan/rev2/new/adapters/native/polygon/PolygonAdapterPolygon/src/contracts/adapters/polygon/PolygonAdapterPolygon.sol out=rev2/native/polygon_adapter/polygon
+	make git-diff before=etherscan/rev2/current/adapters/native/mainnet_polygon/PolygonAdapterEthereum/src/contracts/adapters/polygon/PolygonAdapterEthereum.sol after=etherscan/rev2/new/adapters/native/mainnet_polygon/PolygonAdapterEthereum/src/contracts/adapters/polygon/PolygonAdapterEthereum.sol out=rev2/native/polygon_adapter/mainnet_polygon
+	make git-diff before=etherscan/rev2/current/adapters/native/scroll/ScrollAdapter/src/contracts/adapters/scroll/ScrollAdapter.sol after=etherscan/rev2/new/adapters/native/scroll/ScrollAdapter/src/contracts/adapters/scroll/ScrollAdapter.sol out=rev2/native/scroll_adapter/scroll
+	make git-diff before=etherscan/rev2/current/adapters/native/mainnet_scroll/ScrollAdapter/src/contracts/adapters/scroll/ScrollAdapter.sol after=etherscan/rev2/new/adapters/native/mainnet_scroll/ScrollAdapter/src/contracts/adapters/scroll/ScrollAdapter.sol out=rev2/native/scroll_adapter/mainnet_scroll
+	make git-diff before=etherscan/rev2/current/adapters/native/mainnet_mainnet/SameChainAdapter/src/contracts/adapters/sameChain/SameChainAdapter.sol after=etherscan/rev2/new/adapters/native/mainnet_mainnet/SameChainAdapter/src/contracts/adapters/sameChain/SameChainAdapter.sol out=rev2/native/samechain_adapter/mainnet_mainnet
+
+
+
 
 get-current-ccc-impl :;
 	cast etherscan-source --chain 1 -d etherscan/rev2/current/ccc_impl/mainnet 0x0Bf5bbfaE7808D329e0Ba8277e0b746BbfDA68f1 --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET}
